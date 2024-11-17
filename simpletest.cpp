@@ -305,7 +305,7 @@ static bool locExecuteTest(TestFixture* test, TestFixture::OutputMode output)
 	clock_t start = 0;
 	if (output == TestFixture::Verbose)
 	{
-		TestFixture::Printf("\n[TEST: %s]\n\n", test->TestName());
+		TestFixture::Printf("\n[TEST: %s]\n", test->TestName());
 		start = clock();
 	}
 
@@ -354,7 +354,7 @@ bool TestFixture::ExecuteAllTests(char const* groupFilter, char const* nameFilte
         if (groupFilter == nullptr && nameFilter == nullptr)
             Printf("Running all tests.\n");
         else if (groupFilter != nullptr && nameFilter == nullptr)
-            printf("\n------------------- GROUP: %s\n", groupFilter);
+            printf("\n------------------- GROUP: %s", groupFilter);
         else if (groupFilter == nullptr && nameFilter != nullptr)
             Printf("Running all tests named [%s].\n", nameFilter);
         else
